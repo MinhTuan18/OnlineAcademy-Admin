@@ -26,7 +26,7 @@ const httpClient = (url, options = {}) => {
 
 const AdminComponent = () => (
   <>
-    <Admin title="Table Planner Admin" restClient={jsonServerRestClient(`${API_PORT}`, httpClient)} authClient={Auth}>
+    <Admin title="Online Academy Admin" restClient={jsonServerRestClient(`${API_PORT}`, httpClient)} authClient={Auth}>
       <Resource name="categories" list={CategoryList} show={CategoryShow} edit={CategoryEdit} icon={ListIcon} create={CategoryCreate} remove={Delete}/>
       <Resource name="subCategories" list={SubCategoryList} edit={SubCategoryEdit} show={SubCategoryShow} create={SubCategoryCreate} remove={Delete} icon={AccountTreeIcon}/>
       <Resource name="students" list={UserList}  edit={UserEdit} show={UserShow} create={UserCreate} icon={FaceIcon}/>

@@ -16,7 +16,7 @@ import {
   SelectInput,
   Create,
   BooleanInput, required, minLength, email,
-  EmailField, ChipField,ShowButton
+  EmailField, ChipField,ShowButton, regex
 } from 'admin-on-rest';
 
 const InstructorFilter = (props) => (
@@ -49,9 +49,9 @@ const validateEmail = [required, email];
 const validatePassword = [
   required, 
   minLength(6), 
-  // regex(/^(?=.*?[a-z])$/, 'Password must contain at least one lower case letter'),
-  // regex(/^(?=.*?[A-Z])$/, 'Password must contain at least one upper case letter'),
-  // regex(/^(?=.*?[0-9])$/, 'Password must contain at least one number'),
+  regex(/^(?=.*[a-z])/, 'Password must contain at least one lower case letter'),
+  regex(/^(?=.*[A-Z])/, 'Password must contain at least one upper case letter'),
+  regex(/^(?=.*[0-9])/, 'Password must contain at least one number'),
 ]
 
 
